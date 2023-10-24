@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="address">
+      <h2 data-cy="addressDetailsHeading">
+        <span jhiTranslate="employeeApplicationApp.address.detail.title"
+          >__jhiTransformTranslate__('employeeApplicationApp.address.detail.title')</span
+        >
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span></dt>
+        <dd>
+          <span>{{ address.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.line1">__jhiTransformTranslate__('employeeApplicationApp.address.line1')</span>
+        </dt>
+        <dd>
+          <span>{{ address.line1 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.line2">__jhiTransformTranslate__('employeeApplicationApp.address.line2')</span>
+        </dt>
+        <dd>
+          <span>{{ address.line2 }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.country"
+            >__jhiTransformTranslate__('employeeApplicationApp.address.country')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ address.country }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.state">__jhiTransformTranslate__('employeeApplicationApp.address.state')</span>
+        </dt>
+        <dd>
+          <span>{{ address.state }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.city">__jhiTransformTranslate__('employeeApplicationApp.address.city')</span>
+        </dt>
+        <dd>
+          <span>{{ address.city }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.pincode"
+            >__jhiTransformTranslate__('employeeApplicationApp.address.pincode')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ address.pincode }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.address.employee"
+            >__jhiTransformTranslate__('employeeApplicationApp.address.employee')</span
+          >
+        </dt>
+        <dd>
+          <div *ngIf="address.employee">
+            <a [routerLink]="['/employee', address.employee.id, 'view']">{{ address.employee.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"
+          >__jhiTransformTranslate__('entity.action.back')</span
+        >
+      </button>
+
+      <button type="button" [routerLink]="['/address', address.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"
+          >__jhiTransformTranslate__('entity.action.edit')</span
+        >
+      </button>
+    </div>
+  </div>
+</div>
