@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="employee">
+      <h2 data-cy="employeeDetailsHeading">
+        <span jhiTranslate="employeeApplicationApp.employee.detail.title"
+          >__jhiTransformTranslate__('employeeApplicationApp.employee.detail.title')</span
+        >
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span></dt>
+        <dd>
+          <span>{{ employee.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.employee.firstName"
+            >__jhiTransformTranslate__('employeeApplicationApp.employee.firstName')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ employee.firstName }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.employee.lastName"
+            >__jhiTransformTranslate__('employeeApplicationApp.employee.lastName')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ employee.lastName }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.employee.email"
+            >__jhiTransformTranslate__('employeeApplicationApp.employee.email')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ employee.email }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="employeeApplicationApp.employee.phoneNumber"
+            >__jhiTransformTranslate__('employeeApplicationApp.employee.phoneNumber')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ employee.phoneNumber }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"
+          >__jhiTransformTranslate__('entity.action.back')</span
+        >
+      </button>
+
+      <button type="button" [routerLink]="['/employee', employee.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"
+          >__jhiTransformTranslate__('entity.action.edit')</span
+        >
+      </button>
+    </div>
+  </div>
+</div>
